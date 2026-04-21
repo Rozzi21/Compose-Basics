@@ -1,6 +1,5 @@
 package com.example.compose_basics.component
 
-import android.R.attr.contentDescription
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -58,7 +57,10 @@ fun NotOutlinedEditTextExample( modifier: Modifier = Modifier) {
 
 @Composable
 fun ButtonWithIcon() {
-    Button(onClick = {}) {
+
+    var showDialog by remember { mutableStateOf(false) }
+
+    Button(onClick = { showDialog = true}) {
         Icon(
             painter = painterResource(id = R.drawable.ic_for_first_button_24),
             contentDescription = stringResource(id = R.string.button_text),
@@ -67,6 +69,24 @@ fun ButtonWithIcon() {
         Text(
             text = stringResource(id = R.string.button_smile),
             modifier = Modifier.padding(start = 10.dp))
+    }
+
+    if (showDialog) {
+        AlertDialog(
+            onDismissRequest = {showDialog = false},
+            title = {
+                Text("Tetaplah tersenyum dan bahagia")
+            },
+            text = {
+                Text("Smiley sudah menyapamu")
+            },
+            confirmButton = {
+                Button(onClick = {showDialog = false}) {
+                    Text("Baybay")
+                }
+            }
+        )
+
     }
 }
 
