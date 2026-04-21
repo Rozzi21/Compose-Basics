@@ -1,5 +1,6 @@
 package com.example.compose_basics.component
 
+import android.R.attr.contentDescription
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,6 +13,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.compose_basics.R
@@ -52,6 +54,20 @@ fun NotOutlinedEditTextExample( modifier: Modifier = Modifier) {
             unfocusedIndicatorColor = Color.Black
         )
     )
+}
+
+@Composable
+fun ButtonWithIcon() {
+    Button(onClick = {}) {
+        Icon(
+            painter = painterResource(id = R.drawable.ic_for_first_button_24),
+            contentDescription = stringResource(id = R.string.button_text),
+            modifier = Modifier.padding(end = 8.dp)
+        )
+        Text(
+            text = stringResource(id = R.string.button_smile),
+            modifier = Modifier.padding(start = 10.dp))
+    }
 }
 
 @Preview(showBackground = true)

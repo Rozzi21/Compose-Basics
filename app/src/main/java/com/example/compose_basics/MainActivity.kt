@@ -13,6 +13,7 @@ import com.example.compose_basics.component.EditTextExample
 import com.example.compose_basics.component.NotOutlinedEditTextExample
 import com.example.compose_basics.ui.theme.ComposeBasicsTheme
 import androidx.compose.ui.unit.dp
+import com.example.compose_basics.component.ButtonWithIcon
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,10 +28,9 @@ class MainActivity : ComponentActivity() {
                             .padding(16.dp)
                     ) {
 
-                        EditTextExample(
-                        )
-                        NotOutlinedEditTextExample(
-                        )
+                        EditTextExample()
+                        NotOutlinedEditTextExample()
+                        ButtonWithIcon()
                     }
                 }
             }
