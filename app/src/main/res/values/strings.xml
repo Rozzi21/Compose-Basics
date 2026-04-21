@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Compose-Basics</string>
+    <string name="sample"> Ini adalah teks field</string>
 </resources>
